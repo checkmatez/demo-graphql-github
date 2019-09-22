@@ -1,0 +1,28 @@
+schema:
+  - https://api.github.com/graphql:
+      headers:
+        Authorization: 'Bearer ${REACT_APP_GITHUB_TOKEN}'
+documents:
+  - './src/graphql/*.{ts,tsx}'
+generates:
+  './src/types/graphql.tsx':
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+overwrite: true
+config:
+  noNamespaces: true
+  scalars:
+    DateTime: Date
+    Date: Date
+    Time: Date
+  withHOC: false
+  withComponent: false
+  withHooks: true
+  withMutationFn: false
+  gqlImport: graphql-tag
+  reactApolloVersion: 3
+hooks:
+  afterAllFileWrite:
+    - prettier --write
