@@ -15573,6 +15573,28 @@ export type RepoByIdQuery = { __typename?: "Query" } & {
   >;
 };
 
+export type ChangeDescriptionNameMutationVariables = {
+  id: Scalars["ID"];
+  description: Scalars["String"];
+  name?: Maybe<Scalars["String"]>;
+};
+
+export type ChangeDescriptionNameMutation = { __typename?: "Mutation" } & {
+  updateRepository: Maybe<
+    { __typename?: "UpdateRepositoryPayload" } & Pick<
+      UpdateRepositoryPayload,
+      "clientMutationId"
+    > & {
+        repository: Maybe<
+          { __typename?: "Repository" } & Pick<
+            Repository,
+            "id" | "name" | "description"
+          >
+        >;
+      }
+  >;
+};
+
 export const MyReposDocument = gql`
   query myRepos {
     viewer {
@@ -15657,4 +15679,44 @@ export type RepoByIdQueryHookResult = ReturnType<typeof useRepoByIdQuery>;
 export type RepoByIdQueryResult = ApolloReactCommon.QueryResult<
   RepoByIdQuery,
   RepoByIdQueryVariables
+>;
+export const ChangeDescriptionNameDocument = gql`
+  mutation changeDescriptionName(
+    $id: ID!
+    $description: String!
+    $name: String
+  ) {
+    updateRepository(
+      input: { repositoryId: $id, description: $description, name: $name }
+    ) {
+      clientMutationId
+      repository {
+        id
+        name
+        description
+      }
+    }
+  }
+`;
+
+export function useChangeDescriptionNameMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    ChangeDescriptionNameMutation,
+    ChangeDescriptionNameMutationVariables
+  >
+) {
+  return ApolloReactHooks.useMutation<
+    ChangeDescriptionNameMutation,
+    ChangeDescriptionNameMutationVariables
+  >(ChangeDescriptionNameDocument, baseOptions);
+}
+export type ChangeDescriptionNameMutationHookResult = ReturnType<
+  typeof useChangeDescriptionNameMutation
+>;
+export type ChangeDescriptionNameMutationResult = ApolloReactCommon.MutationResult<
+  ChangeDescriptionNameMutation
+>;
+export type ChangeDescriptionNameMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  ChangeDescriptionNameMutation,
+  ChangeDescriptionNameMutationVariables
 >;

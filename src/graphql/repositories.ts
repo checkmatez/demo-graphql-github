@@ -28,3 +28,16 @@ export const REPO_BY_ID = gql`
     }
   }
 `;
+
+export const CHANGE_DESCRIPTION_NAME = gql`
+  mutation changeDescriptionName($id: ID!, $description: String!, $name: String) {
+    updateRepository(input: { repositoryId: $id, description: $description, name: $name }) {
+      clientMutationId
+      repository {
+        id
+        name
+        description
+      }
+    }
+  }
+`;

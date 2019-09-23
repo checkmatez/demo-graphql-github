@@ -1,8 +1,9 @@
 import { Box, Text, CircularProgress, Flex } from '@chakra-ui/core';
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
-import { useRepoByIdQuery } from '../types/graphql';
+import { useRepoByIdQuery, useChangeDescriptionNameMutation } from '../types/graphql';
+import { RepositoryForm } from './RepositoryForm';
 
 interface Params {
   id: string;
@@ -10,8 +11,13 @@ interface Params {
 
 export const RepositoryCard: React.FC = () => {
   const { id } = useParams<Params>();
+  const history = useHistory();
   const { data, loading, error } = useRepoByIdQuery({
     variables: { id },
+  });
+
+  const [changeDescriptionName, changeDescriptionNameResult] = useChangeDescriptionNameMutation({
+    onCompleted: () => history.push('/'),
   });
 
   if (error) {
@@ -29,15 +35,11 @@ export const RepositoryCard: React.FC = () => {
   const repository = data.node;
 
   return (
-    <Box>
-      <Flex flexDirection="row">
-        <Text>Наименование: </Text>
-        <Text>{repository.name}</Text>
-      </Flex>
-      <Flex flexDirection="row">
-        <Text>Описание: </Text>
-        <Text>{repository.description}</Text>
-      </Flex>
-    </Box>
+    <RepositoryForm
+      onSubmit={data => changeDescriptionName({ variables: { id, ...data } })}
+      loading={changeDescriptionNameResult.loading}
+      initialName={repository.name}
+      initialDescription={repository.description || ''}
+    />
   );
 };
