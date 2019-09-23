@@ -16,9 +16,7 @@ export const RepositoryCard: React.FC = () => {
     variables: { id },
   });
 
-  const [changeDescriptionName, changeDescriptionNameResult] = useChangeDescriptionNameMutation({
-    onCompleted: () => history.push('/'),
-  });
+  const [changeDescriptionName, changeDescriptionNameResult] = useChangeDescriptionNameMutation({});
 
   if (error) {
     return <Text>{`Error! ${JSON.stringify(error, null, 2)}`}</Text>;
@@ -36,7 +34,24 @@ export const RepositoryCard: React.FC = () => {
 
   return (
     <RepositoryForm
-      onSubmit={data => changeDescriptionName({ variables: { id, ...data } })}
+      onSubmit={({ name, description }) => {
+        changeDescriptionName({
+          variables: { id, name, description },
+          optimisticResponse: {
+            updateRepository: {
+              clientMutationId: null,
+              repository: {
+                id,
+                name,
+                description,
+                __typename: 'Repository',
+              },
+              __typename: 'UpdateRepositoryPayload',
+            },
+          },
+        });
+        history.push('/');
+      }}
       loading={changeDescriptionNameResult.loading}
       initialName={repository.name}
       initialDescription={repository.description || ''}
