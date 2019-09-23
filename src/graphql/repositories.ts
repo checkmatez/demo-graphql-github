@@ -15,3 +15,16 @@ export const MY_REPOS_QUERY = gql`
     }
   }
 `;
+
+export const REPO_BY_ID = gql`
+  query repoById($id: ID!) {
+    node(id: $id) {
+      id
+      ... on Repository {
+        id
+        name
+        description
+      }
+    }
+  }
+`;

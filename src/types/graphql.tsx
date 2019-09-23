@@ -15167,6 +15167,412 @@ export type MyReposQuery = { __typename?: "Query" } & {
   };
 };
 
+export type RepoByIdQueryVariables = {
+  id: Scalars["ID"];
+};
+
+export type RepoByIdQuery = { __typename?: "Query" } & {
+  node: Maybe<
+    | ({ __typename?: "CodeOfConduct" } & Pick<CodeOfConduct, "id">)
+    | ({ __typename?: "License" } & Pick<License, "id">)
+    | ({ __typename?: "MarketplaceCategory" } & Pick<MarketplaceCategory, "id">)
+    | ({ __typename?: "MarketplaceListing" } & Pick<MarketplaceListing, "id">)
+    | ({ __typename?: "App" } & Pick<App, "id">)
+    | ({ __typename?: "Organization" } & Pick<Organization, "id">)
+    | ({ __typename?: "RegistryPackage" } & Pick<RegistryPackage, "id">)
+    | ({ __typename?: "RegistryPackageVersion" } & Pick<
+        RegistryPackageVersion,
+        "id"
+      >)
+    | ({ __typename?: "RegistryPackageDependency" } & Pick<
+        RegistryPackageDependency,
+        "id"
+      >)
+    | ({ __typename?: "RegistryPackageFile" } & Pick<RegistryPackageFile, "id">)
+    | ({ __typename?: "Release" } & Pick<Release, "id">)
+    | ({ __typename?: "User" } & Pick<User, "id">)
+    | ({ __typename?: "Project" } & Pick<Project, "id">)
+    | ({ __typename?: "ProjectColumn" } & Pick<ProjectColumn, "id">)
+    | ({ __typename?: "ProjectCard" } & Pick<ProjectCard, "id">)
+    | ({ __typename?: "Issue" } & Pick<Issue, "id">)
+    | ({ __typename?: "UserContentEdit" } & Pick<UserContentEdit, "id">)
+    | ({ __typename?: "Label" } & Pick<Label, "id">)
+    | ({ __typename?: "PullRequest" } & Pick<PullRequest, "id">)
+    | ({ __typename?: "Reaction" } & Pick<Reaction, "id">)
+    | ({ __typename?: "Repository" } & Pick<
+        Repository,
+        "id" | "name" | "description"
+      >)
+    | ({ __typename?: "BranchProtectionRule" } & Pick<
+        BranchProtectionRule,
+        "id"
+      >)
+    | ({ __typename?: "Ref" } & Pick<Ref, "id">)
+    | ({ __typename?: "PushAllowance" } & Pick<PushAllowance, "id">)
+    | ({ __typename?: "Team" } & Pick<Team, "id">)
+    | ({ __typename?: "UserStatus" } & Pick<UserStatus, "id">)
+    | ({ __typename?: "OrganizationInvitation" } & Pick<
+        OrganizationInvitation,
+        "id"
+      >)
+    | ({ __typename?: "ReviewDismissalAllowance" } & Pick<
+        ReviewDismissalAllowance,
+        "id"
+      >)
+    | ({ __typename?: "CommitComment" } & Pick<CommitComment, "id">)
+    | ({ __typename?: "Commit" } & Pick<Commit, "id">)
+    | ({ __typename?: "Deployment" } & Pick<Deployment, "id">)
+    | ({ __typename?: "DeploymentStatus" } & Pick<DeploymentStatus, "id">)
+    | ({ __typename?: "Status" } & Pick<Status, "id">)
+    | ({ __typename?: "StatusContext" } & Pick<StatusContext, "id">)
+    | ({ __typename?: "Tree" } & Pick<Tree, "id">)
+    | ({ __typename?: "DeployKey" } & Pick<DeployKey, "id">)
+    | ({ __typename?: "Language" } & Pick<Language, "id">)
+    | ({ __typename?: "Milestone" } & Pick<Milestone, "id">)
+    | ({ __typename?: "RepositoryTopic" } & Pick<RepositoryTopic, "id">)
+    | ({ __typename?: "Topic" } & Pick<Topic, "id">)
+    | ({ __typename?: "IssueComment" } & Pick<IssueComment, "id">)
+    | ({ __typename?: "PullRequestCommit" } & Pick<PullRequestCommit, "id">)
+    | ({ __typename?: "ReviewRequest" } & Pick<ReviewRequest, "id">)
+    | ({ __typename?: "Mannequin" } & Pick<Mannequin, "id">)
+    | ({ __typename?: "PullRequestReviewThread" } & Pick<
+        PullRequestReviewThread,
+        "id"
+      >)
+    | ({ __typename?: "PullRequestReviewComment" } & Pick<
+        PullRequestReviewComment,
+        "id"
+      >)
+    | ({ __typename?: "PullRequestReview" } & Pick<PullRequestReview, "id">)
+    | ({ __typename?: "CommitCommentThread" } & Pick<CommitCommentThread, "id">)
+    | ({ __typename?: "ClosedEvent" } & Pick<ClosedEvent, "id">)
+    | ({ __typename?: "ReopenedEvent" } & Pick<ReopenedEvent, "id">)
+    | ({ __typename?: "SubscribedEvent" } & Pick<SubscribedEvent, "id">)
+    | ({ __typename?: "UnsubscribedEvent" } & Pick<UnsubscribedEvent, "id">)
+    | ({ __typename?: "MergedEvent" } & Pick<MergedEvent, "id">)
+    | ({ __typename?: "ReferencedEvent" } & Pick<ReferencedEvent, "id">)
+    | ({ __typename?: "CrossReferencedEvent" } & Pick<
+        CrossReferencedEvent,
+        "id"
+      >)
+    | ({ __typename?: "AssignedEvent" } & Pick<AssignedEvent, "id">)
+    | ({ __typename?: "Bot" } & Pick<Bot, "id">)
+    | ({ __typename?: "UnassignedEvent" } & Pick<UnassignedEvent, "id">)
+    | ({ __typename?: "LabeledEvent" } & Pick<LabeledEvent, "id">)
+    | ({ __typename?: "UnlabeledEvent" } & Pick<UnlabeledEvent, "id">)
+    | ({ __typename?: "MilestonedEvent" } & Pick<MilestonedEvent, "id">)
+    | ({ __typename?: "DemilestonedEvent" } & Pick<DemilestonedEvent, "id">)
+    | ({ __typename?: "RenamedTitleEvent" } & Pick<RenamedTitleEvent, "id">)
+    | ({ __typename?: "LockedEvent" } & Pick<LockedEvent, "id">)
+    | ({ __typename?: "UnlockedEvent" } & Pick<UnlockedEvent, "id">)
+    | ({ __typename?: "DeployedEvent" } & Pick<DeployedEvent, "id">)
+    | ({ __typename?: "DeploymentEnvironmentChangedEvent" } & Pick<
+        DeploymentEnvironmentChangedEvent,
+        "id"
+      >)
+    | ({ __typename?: "HeadRefDeletedEvent" } & Pick<HeadRefDeletedEvent, "id">)
+    | ({ __typename?: "HeadRefRestoredEvent" } & Pick<
+        HeadRefRestoredEvent,
+        "id"
+      >)
+    | ({ __typename?: "HeadRefForcePushedEvent" } & Pick<
+        HeadRefForcePushedEvent,
+        "id"
+      >)
+    | ({ __typename?: "BaseRefForcePushedEvent" } & Pick<
+        BaseRefForcePushedEvent,
+        "id"
+      >)
+    | ({ __typename?: "ReviewRequestedEvent" } & Pick<
+        ReviewRequestedEvent,
+        "id"
+      >)
+    | ({ __typename?: "ReviewRequestRemovedEvent" } & Pick<
+        ReviewRequestRemovedEvent,
+        "id"
+      >)
+    | ({ __typename?: "ReviewDismissedEvent" } & Pick<
+        ReviewDismissedEvent,
+        "id"
+      >)
+    | ({ __typename?: "UserBlockedEvent" } & Pick<UserBlockedEvent, "id">)
+    | ({ __typename?: "PullRequestCommitCommentThread" } & Pick<
+        PullRequestCommitCommentThread,
+        "id"
+      >)
+    | ({ __typename?: "BaseRefChangedEvent" } & Pick<BaseRefChangedEvent, "id">)
+    | ({ __typename?: "ReadyForReviewEvent" } & Pick<ReadyForReviewEvent, "id">)
+    | ({ __typename?: "AddedToProjectEvent" } & Pick<AddedToProjectEvent, "id">)
+    | ({ __typename?: "CommentDeletedEvent" } & Pick<CommentDeletedEvent, "id">)
+    | ({ __typename?: "ConvertedNoteToIssueEvent" } & Pick<
+        ConvertedNoteToIssueEvent,
+        "id"
+      >)
+    | ({ __typename?: "MarkedAsDuplicateEvent" } & Pick<
+        MarkedAsDuplicateEvent,
+        "id"
+      >)
+    | ({ __typename?: "MentionedEvent" } & Pick<MentionedEvent, "id">)
+    | ({ __typename?: "MovedColumnsInProjectEvent" } & Pick<
+        MovedColumnsInProjectEvent,
+        "id"
+      >)
+    | ({ __typename?: "PinnedEvent" } & Pick<PinnedEvent, "id">)
+    | ({ __typename?: "RemovedFromProjectEvent" } & Pick<
+        RemovedFromProjectEvent,
+        "id"
+      >)
+    | ({ __typename?: "TransferredEvent" } & Pick<TransferredEvent, "id">)
+    | ({ __typename?: "UnpinnedEvent" } & Pick<UnpinnedEvent, "id">)
+    | ({ __typename?: "Gist" } & Pick<Gist, "id">)
+    | ({ __typename?: "GistComment" } & Pick<GistComment, "id">)
+    | ({ __typename?: "Sponsorship" } & Pick<Sponsorship, "id">)
+    | ({ __typename?: "PublicKey" } & Pick<PublicKey, "id">)
+    | ({ __typename?: "SavedReply" } & Pick<SavedReply, "id">)
+    | ({ __typename?: "ReleaseAsset" } & Pick<ReleaseAsset, "id">)
+    | ({ __typename?: "RegistryPackageTag" } & Pick<RegistryPackageTag, "id">)
+    | ({ __typename?: "MembersCanDeleteReposClearAuditEntry" } & Pick<
+        MembersCanDeleteReposClearAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "MembersCanDeleteReposDisableAuditEntry" } & Pick<
+        MembersCanDeleteReposDisableAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "MembersCanDeleteReposEnableAuditEntry" } & Pick<
+        MembersCanDeleteReposEnableAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OauthApplicationCreateAuditEntry" } & Pick<
+        OauthApplicationCreateAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgAddBillingManagerAuditEntry" } & Pick<
+        OrgAddBillingManagerAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgAddMemberAuditEntry" } & Pick<
+        OrgAddMemberAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgBlockUserAuditEntry" } & Pick<
+        OrgBlockUserAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgConfigDisableCollaboratorsOnlyAuditEntry" } & Pick<
+        OrgConfigDisableCollaboratorsOnlyAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgConfigEnableCollaboratorsOnlyAuditEntry" } & Pick<
+        OrgConfigEnableCollaboratorsOnlyAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgCreateAuditEntry" } & Pick<OrgCreateAuditEntry, "id">)
+    | ({ __typename?: "OrgDisableOauthAppRestrictionsAuditEntry" } & Pick<
+        OrgDisableOauthAppRestrictionsAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgDisableSamlAuditEntry" } & Pick<
+        OrgDisableSamlAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgDisableTwoFactorRequirementAuditEntry" } & Pick<
+        OrgDisableTwoFactorRequirementAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgEnableOauthAppRestrictionsAuditEntry" } & Pick<
+        OrgEnableOauthAppRestrictionsAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgEnableSamlAuditEntry" } & Pick<
+        OrgEnableSamlAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgEnableTwoFactorRequirementAuditEntry" } & Pick<
+        OrgEnableTwoFactorRequirementAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgInviteMemberAuditEntry" } & Pick<
+        OrgInviteMemberAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgInviteToBusinessAuditEntry" } & Pick<
+        OrgInviteToBusinessAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgOauthAppAccessApprovedAuditEntry" } & Pick<
+        OrgOauthAppAccessApprovedAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgOauthAppAccessDeniedAuditEntry" } & Pick<
+        OrgOauthAppAccessDeniedAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgOauthAppAccessRequestedAuditEntry" } & Pick<
+        OrgOauthAppAccessRequestedAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgRemoveBillingManagerAuditEntry" } & Pick<
+        OrgRemoveBillingManagerAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgRemoveMemberAuditEntry" } & Pick<
+        OrgRemoveMemberAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgRemoveOutsideCollaboratorAuditEntry" } & Pick<
+        OrgRemoveOutsideCollaboratorAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgRestoreMemberAuditEntry" } & Pick<
+        OrgRestoreMemberAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgUnblockUserAuditEntry" } & Pick<
+        OrgUnblockUserAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgUpdateDefaultRepositoryPermissionAuditEntry" } & Pick<
+        OrgUpdateDefaultRepositoryPermissionAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrgUpdateMemberAuditEntry" } & Pick<
+        OrgUpdateMemberAuditEntry,
+        "id"
+      >)
+    | ({
+        __typename?: "OrgUpdateMemberRepositoryCreationPermissionAuditEntry";
+      } & Pick<OrgUpdateMemberRepositoryCreationPermissionAuditEntry, "id">)
+    | ({
+        __typename?: "OrgUpdateMemberRepositoryInvitationPermissionAuditEntry";
+      } & Pick<OrgUpdateMemberRepositoryInvitationPermissionAuditEntry, "id">)
+    | ({ __typename?: "PrivateRepositoryForkingDisableAuditEntry" } & Pick<
+        PrivateRepositoryForkingDisableAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "PrivateRepositoryForkingEnableAuditEntry" } & Pick<
+        PrivateRepositoryForkingEnableAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoAccessAuditEntry" } & Pick<
+        RepoAccessAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoAddMemberAuditEntry" } & Pick<
+        RepoAddMemberAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoAddTopicAuditEntry" } & Pick<
+        RepoAddTopicAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoArchivedAuditEntry" } & Pick<
+        RepoArchivedAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoChangeMergeSettingAuditEntry" } & Pick<
+        RepoChangeMergeSettingAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoConfigDisableAnonymousGitAccessAuditEntry" } & Pick<
+        RepoConfigDisableAnonymousGitAccessAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoConfigDisableCollaboratorsOnlyAuditEntry" } & Pick<
+        RepoConfigDisableCollaboratorsOnlyAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoConfigDisableContributorsOnlyAuditEntry" } & Pick<
+        RepoConfigDisableContributorsOnlyAuditEntry,
+        "id"
+      >)
+    | ({
+        __typename?: "RepoConfigDisableSockpuppetDisallowedAuditEntry";
+      } & Pick<RepoConfigDisableSockpuppetDisallowedAuditEntry, "id">)
+    | ({ __typename?: "RepoConfigEnableAnonymousGitAccessAuditEntry" } & Pick<
+        RepoConfigEnableAnonymousGitAccessAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoConfigEnableCollaboratorsOnlyAuditEntry" } & Pick<
+        RepoConfigEnableCollaboratorsOnlyAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoConfigEnableContributorsOnlyAuditEntry" } & Pick<
+        RepoConfigEnableContributorsOnlyAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoConfigEnableSockpuppetDisallowedAuditEntry" } & Pick<
+        RepoConfigEnableSockpuppetDisallowedAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoConfigLockAnonymousGitAccessAuditEntry" } & Pick<
+        RepoConfigLockAnonymousGitAccessAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoConfigUnlockAnonymousGitAccessAuditEntry" } & Pick<
+        RepoConfigUnlockAnonymousGitAccessAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoCreateAuditEntry" } & Pick<
+        RepoCreateAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoDestroyAuditEntry" } & Pick<
+        RepoDestroyAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoRemoveMemberAuditEntry" } & Pick<
+        RepoRemoveMemberAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepoRemoveTopicAuditEntry" } & Pick<
+        RepoRemoveTopicAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepositoryVisibilityChangeDisableAuditEntry" } & Pick<
+        RepositoryVisibilityChangeDisableAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "RepositoryVisibilityChangeEnableAuditEntry" } & Pick<
+        RepositoryVisibilityChangeEnableAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "TeamAddMemberAuditEntry" } & Pick<
+        TeamAddMemberAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "TeamAddRepositoryAuditEntry" } & Pick<
+        TeamAddRepositoryAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "TeamChangeParentTeamAuditEntry" } & Pick<
+        TeamChangeParentTeamAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "TeamRemoveMemberAuditEntry" } & Pick<
+        TeamRemoveMemberAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "TeamRemoveRepositoryAuditEntry" } & Pick<
+        TeamRemoveRepositoryAuditEntry,
+        "id"
+      >)
+    | ({ __typename?: "OrganizationIdentityProvider" } & Pick<
+        OrganizationIdentityProvider,
+        "id"
+      >)
+    | ({ __typename?: "ExternalIdentity" } & Pick<ExternalIdentity, "id">)
+    | ({ __typename?: "SecurityAdvisory" } & Pick<SecurityAdvisory, "id">)
+    | ({ __typename?: "SponsorsListing" } & Pick<SponsorsListing, "id">)
+    | ({ __typename?: "Blob" } & Pick<Blob, "id">)
+    | ({ __typename?: "RepositoryInvitation" } & Pick<
+        RepositoryInvitation,
+        "id"
+      >)
+    | ({ __typename?: "Tag" } & Pick<Tag, "id">)
+  >;
+};
+
 export const MyReposDocument = gql`
   query myRepos {
     viewer {
@@ -15210,4 +15616,45 @@ export type MyReposQueryHookResult = ReturnType<typeof useMyReposQuery>;
 export type MyReposQueryResult = ApolloReactCommon.QueryResult<
   MyReposQuery,
   MyReposQueryVariables
+>;
+export const RepoByIdDocument = gql`
+  query repoById($id: ID!) {
+    node(id: $id) {
+      id
+      ... on Repository {
+        id
+        name
+        description
+      }
+    }
+  }
+`;
+
+export function useRepoByIdQuery(
+  baseOptions?: ApolloReactHooks.QueryHookOptions<
+    RepoByIdQuery,
+    RepoByIdQueryVariables
+  >
+) {
+  return ApolloReactHooks.useQuery<RepoByIdQuery, RepoByIdQueryVariables>(
+    RepoByIdDocument,
+    baseOptions
+  );
+}
+export function useRepoByIdLazyQuery(
+  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+    RepoByIdQuery,
+    RepoByIdQueryVariables
+  >
+) {
+  return ApolloReactHooks.useLazyQuery<RepoByIdQuery, RepoByIdQueryVariables>(
+    RepoByIdDocument,
+    baseOptions
+  );
+}
+
+export type RepoByIdQueryHookResult = ReturnType<typeof useRepoByIdQuery>;
+export type RepoByIdQueryResult = ApolloReactCommon.QueryResult<
+  RepoByIdQuery,
+  RepoByIdQueryVariables
 >;
