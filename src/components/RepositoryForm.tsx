@@ -1,4 +1,4 @@
-import { Box, Text, CircularProgress, Flex, Input, Stack, Button } from '@chakra-ui/core';
+import { Button, Flex, Input, Stack, Text } from '@chakra-ui/core';
 import React from 'react';
 
 interface RepositoryForm {

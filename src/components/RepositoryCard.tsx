@@ -1,8 +1,8 @@
-import { Box, Text, CircularProgress, Flex } from '@chakra-ui/core';
+import { CircularProgress, Text } from '@chakra-ui/core';
 import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 
-import { useRepoByIdQuery, useChangeDescriptionNameMutation } from '../types/graphql';
+import { useChangeDescriptionNameMutation, useRepoByIdQuery } from '../types/graphql';
 import { RepositoryForm } from './RepositoryForm';
 
 interface Params {
@@ -27,7 +27,7 @@ export const RepositoryCard: React.FC = () => {
   }
 
   if (!data.node || data.node.__typename !== 'Repository') {
-    return <Text>😵 Упс! Кажется такого репозитория нет...</Text>;
+    return <Text>Упс! Кажется такого репозитория нет...</Text>;
   }
 
   const repository = data.node;

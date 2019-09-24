@@ -2,8 +2,8 @@ import { Text } from '@chakra-ui/core';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { RepositoryVisibility, useCreateRepositoryMutation } from '../types/graphql';
 import { RepositoryForm } from './RepositoryForm';
-import { useCreateRepositoryMutation, RepositoryVisibility } from '../types/graphql';
 
 export const RepositoryNew: React.FC = () => {
   const history = useHistory();
