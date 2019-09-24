@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { RepositoryCard } from './RepositoryCard';
 import { RepositoryList } from './RepositoryList';
+import { RepositoryNew } from './RepositoryNew';
 
 if (!process.env.REACT_APP_GITHUB_TOKEN) {
   throw new Error('Please provide REACT_APP_GITHUB_TOKEN env.');
@@ -28,6 +29,9 @@ export const App: React.FC = () => (
             <Switch>
               <Route path="/" exact>
                 <RepositoryList />
+              </Route>
+              <Route path="/repo/new" exact>
+                <RepositoryNew />
               </Route>
               <Route path="/repo/:id" exact>
                 <RepositoryCard />

@@ -15608,6 +15608,19 @@ export type ChangeDescriptionNameMutation = { __typename?: "Mutation" } & {
     > & { repository: Maybe<{ __typename?: "Repository" } & RepoFragment> }
   >;
 };
+
+export type CreateRepositoryMutationVariables = {
+  input: CreateRepositoryInput;
+};
+
+export type CreateRepositoryMutation = { __typename?: "Mutation" } & {
+  createRepository: Maybe<
+    { __typename?: "CreateRepositoryPayload" } & Pick<
+      CreateRepositoryPayload,
+      "clientMutationId"
+    > & { repository: Maybe<{ __typename?: "Repository" } & RepoFragment> }
+  >;
+};
 export const RepoFragmentDoc = gql`
   fragment Repo on Repository {
     id
@@ -15736,4 +15749,37 @@ export type ChangeDescriptionNameMutationResult = ApolloReactCommon.MutationResu
 export type ChangeDescriptionNameMutationOptions = ApolloReactCommon.BaseMutationOptions<
   ChangeDescriptionNameMutation,
   ChangeDescriptionNameMutationVariables
+>;
+export const CreateRepositoryDocument = gql`
+  mutation createRepository($input: CreateRepositoryInput!) {
+    createRepository(input: $input) {
+      clientMutationId
+      repository {
+        ...Repo
+      }
+    }
+  }
+  ${RepoFragmentDoc}
+`;
+
+export function useCreateRepositoryMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    CreateRepositoryMutation,
+    CreateRepositoryMutationVariables
+  >
+) {
+  return ApolloReactHooks.useMutation<
+    CreateRepositoryMutation,
+    CreateRepositoryMutationVariables
+  >(CreateRepositoryDocument, baseOptions);
+}
+export type CreateRepositoryMutationHookResult = ReturnType<
+  typeof useCreateRepositoryMutation
+>;
+export type CreateRepositoryMutationResult = ApolloReactCommon.MutationResult<
+  CreateRepositoryMutation
+>;
+export type CreateRepositoryMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  CreateRepositoryMutation,
+  CreateRepositoryMutationVariables
 >;

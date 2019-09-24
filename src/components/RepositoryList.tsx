@@ -13,9 +13,14 @@ export const RepositoryList: React.FC = () => {
 
   return (
     <Flex flexDirection="column">
-      <Text fontSize="xl" fontWeight="bold" alignSelf="center">
-        Мои репозитории
-      </Text>
+      <Flex flexDirection="row" justifyContent="space-around" alignItems="center">
+        <Text fontSize="xl" fontWeight="bold">
+          Мои репозитории
+        </Text>
+        <StyledLink to="/repo/new">
+          <Text color="blue.600">Создать</Text>
+        </StyledLink>
+      </Flex>
       {loading && <CircularProgress isIndeterminate />}
       <table>
         <thead>

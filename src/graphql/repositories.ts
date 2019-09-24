@@ -46,3 +46,15 @@ export const CHANGE_DESCRIPTION_NAME = gql`
   }
   ${REPO_FRAGMENT}
 `;
+
+export const CREATE_REPO = gql`
+  mutation createRepository($input: CreateRepositoryInput!) {
+    createRepository(input: $input) {
+      clientMutationId
+      repository {
+        ...Repo
+      }
+    }
+  }
+  ${REPO_FRAGMENT}
+`;
